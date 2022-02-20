@@ -15,14 +15,11 @@ export default function Question() {
   };
   const [open, setOpen] = React.useState(false);
   const handleSave = () => {
-    setOpen(true);
     console.log({content})
     Clear({content})
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+
  
 
 
@@ -41,17 +38,11 @@ export default function Question() {
       
     />
      <DialogActions>
- 
-   <Button onClick={handleClose} color="primary"
-            >
-            Cancel
-          </Button>
-          <Button onClick={handleSave} color="primary" >
-             Save 
+          <Button onClick={handleSave} color="primary" container >
+             Post
           </Button >
           </DialogActions>
   </>
   );
-
 }
 

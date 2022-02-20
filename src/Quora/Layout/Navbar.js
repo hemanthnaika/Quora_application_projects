@@ -22,13 +22,13 @@ import PeopleIcon from '@material-ui/icons/People';
 
 import Dialog from '@material-ui/core/Dialog';
 import LanguageIcon from '@material-ui/icons/Language';
-import DialogActions from '@material-ui/core/DialogActions';
+
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
-import Question from '../Question/Question';
-
+import Question from '../Write/Question';
+import {Link} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 const defaultProps = {
  
@@ -70,7 +70,6 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
  color:'#d50000',
     borderRadius: theme.shape.borderRadius,
-
     backgroundColor: alpha(theme.palette.common.black, 0.15),
     '&:hover': {
       backgroundColor: alpha(theme.palette.common.black, 0.15),
@@ -102,8 +101,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     // paddingTop: theme.spacing(10),
     // position: "sticky",
-   
-
+    
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
  
   },
   inputRoot: {
@@ -250,13 +249,13 @@ export default function Navbar() {
     
 
           <div className={classes.icon} >
-          <IconButton color="#4615b2"   className={classes.menuButton}>
+          <IconButton color="#4615b2"   className={classes.menuButton} component={Link} to="/home">
           <Home/>
           </IconButton>
           <IconButton color="#d50000"  className={classes.menuButton}>
           <ListAltSharpIcon/>
           </IconButton>
-          <IconButton color="#d50000"  className={classes.menuButton}>
+          <IconButton color="#d50000"  className={classes.menuButton} component={Link} to="/answer">
           <EditOutlinedIcon/>
           </IconButton>
           <IconButton color="#d50000"  className={classes.menuButton}>
@@ -321,14 +320,6 @@ export default function Navbar() {
             <Question/>
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleClose} color="primary">
-             Save
-          </Button>
-        </DialogActions>
       </Dialog>
       <IconButton aria-label="show 4 new mails" color="inherit" className={classes.notification}>
               <Badge badgeContent={4} color="secondary">
@@ -337,9 +328,6 @@ export default function Navbar() {
             </IconButton>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-           
-            
-          
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
