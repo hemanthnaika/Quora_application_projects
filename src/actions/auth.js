@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast'
 export const loginUser = (email, password) => async (dispatch) => {
 
     try {
-        const base_Url = 'https://hemanth-e-comerce-api.herokuapp.com'
+        const base_Url = 'https://quora-app-api-hemanth.herokuapp.com/'
 
         const res = await axios.post(`${base_Url}/api/v1/auth/login`, {
             email, password
@@ -40,7 +40,7 @@ export const loginUser = (email, password) => async (dispatch) => {
 export const signupUser = (email, firstName, lastName, password) => async (dispatch) => {
 
     try {
-        const base_Url = 'https://hemanth-e-comerce-api.herokuapp.com'
+        const base_Url = 'https://quora-app-api-hemanth.herokuapp.com/'
 
         const res = await axios.post(`${base_Url}/api/v1/auth/signup`, {
             email, firstName, lastName, password

@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast'
 export const addQuestion = (content) => async (dispatch) => {
 
     try {
-        const base_Url = 'http://localhost:8080'
+        const base_Url = 'https://quora-app-api-hemanth.herokuapp.com/'
 
         const res = await axios.post(`${base_Url}/api/v1/question/add`, {
             content
