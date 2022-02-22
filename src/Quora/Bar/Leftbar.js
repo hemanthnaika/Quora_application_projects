@@ -1,5 +1,5 @@
 
-import { Container, makeStyles, Typography } from "@material-ui/core";
+import { Container, IconButton, makeStyles, Typography } from "@material-ui/core";
 import {
   Bookmark,
   List,
@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
      height: "100vh",
     
     
-    paddingTop: theme.spacing(4),
+    paddingTop: theme.spacing(7),
     position: "sticky",
     top: 25,
     [theme.breakpoints.down("md")]: {
@@ -81,9 +81,9 @@ const useStyles = makeStyles((theme) => ({
      display: "flex",
     
     alignItems: "center",
-    marginBottom: theme.spacing(8),
+    marginBottom: theme.spacing(0),
     [theme.breakpoints.up("sm")]: {
-      marginBottom: theme.spacing(3),
+      marginBottom: theme.spacing(0),
       cursor: "pointer",
      
     },
@@ -94,7 +94,7 @@ width:'20px',
   },
   icon: {
 
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(0),
     [theme.breakpoints.up("sm")]: {
       fontSize: "4px",
     
@@ -116,26 +116,27 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
           
         }}
         variant="dot"
       >
-        <Avatar alt="P" src="/static/images/avatar/1.jpg" />
+         <IconButton><img src="gg" alt="q" /></IconButton>
+         
       </StyledBadge>
-        <Typography className={classes.text}>Psychology</Typography>
+      <Typography className={classes.text}>Psychology</Typography>
       </div>
       <div className={classes.item}>
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="F" src="/static/images/avatar/1.jpg" />
+          <IconButton><img src="gg" alt="q" /></IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Food</Typography>
       </div>
@@ -143,12 +144,12 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="S" src="/static/images/avatar/1.jpg" />
+           <IconButton><img src="gg" alt="q" /></IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Science</Typography>
       </div>
@@ -156,12 +157,12 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="H" src="/static/images/avatar/1.jpg" />
+          <IconButton>PP</IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Health</Typography>
       </div>
@@ -169,12 +170,12 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="M" src="/static/images/avatar/1.jpg" />
+        <IconButton><img src="gg" alt="q" /></IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Movies</Typography>
       </div>
@@ -182,12 +183,12 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="T" src="/static/images/avatar/1.jpg" />
+          <IconButton><img src="gg" alt="q" /></IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Telnology</Typography>
       </div>
@@ -195,12 +196,12 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="W"  src="./Image/Node.jpg"  /> 
+         <IconButton><img src="gg" alt="q" /></IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Web Design</Typography>
       </div>
@@ -208,12 +209,12 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="N" src="/static/images/avatar/1.jpg" />
+          <IconButton><img src="gg" alt="q" /></IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Node.js</Typography>
       </div>
@@ -221,53 +222,14 @@ const Leftbar = () => {
       <StyledBadge
         overlap="rectangle"
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'right',
         }}
         variant="dot"
       >
-        <Avatar alt="F" src="/static/images/avatar/1.jpg" />
+       <IconButton><img src="gg" alt="q" /></IconButton>
       </StyledBadge>
         <Typography className={classes.text}>Front-End Web Development</Typography>
-      </div>
-      <div className={classes.item}>
-      <StyledBadge
-        overlap="rectangle"
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        variant="dot"
-      >
-        <Avatar alt="J" src="/static/images/avatar/1.jpg" />
-      </StyledBadge>
-        <Typography className={classes.text}>JavaScript (programming language)</Typography>
-      </div>
-      <div className={classes.item}>
-      <StyledBadge
-        overlap="rectangle"
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        variant="dot"
-      >
-        <Avatar alt="R" src="/static/images/avatar/1.jpg" />
-      </StyledBadge>
-        <Typography className={classes.text}>React (JavaScript library)</Typography>
-      </div>
-      <div className={classes.item}>
-      <StyledBadge
-        overlap="rectangle"
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        variant="dot"
-      >
-        <Avatar alt="Wb" src="/static/images/avatar/1.jpg" />
-      </StyledBadge>
-        <Typography className={classes.text}>Web Development</Typography>
       </div>
     </Container>
   );

@@ -1,31 +1,61 @@
 
-import {
-  Link,
-  Avatar,
-  Container,
-  ImageList,
-  ImageListItem,
-  makeStyles,
-  Typography,
-  Divider,
-} from "@material-ui/core";
-import { AvatarGroup } from "@material-ui/lab";
+import { Avatar, Card, Checkbox, Container, IconButton, makeStyles, Typography } from "@material-ui/core";
+import { Home } from "@material-ui/icons";
+
 
 const useStyles = makeStyles((theme) => ({
+
   container: {
+     height: "100vh",
     paddingTop: theme.spacing(10),
-    position: "sticky",
-    top: 0,
+
+    top: 1,
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
-  title: {
-    fontSize: 16,
+  item: {
+     display: "flex",
+    top:theme.spacing(3),
+   
+    alignItems: "center",
+    marginBottom: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      marginBottom: theme.spacing(1),
+      cursor: "pointer",
+     
+    },
+   
+  },
+  
+  icon: {
+
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "18px",
+    
+    },
+  },
+  text: {
     fontWeight: 500,
-    color: "#555",
+    paddingRight:5,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
-  link: {
-    marginRight: theme.spacing(2),
-    color: "#555",
-    fontSize: 16,
+  follow:{
+    marginTop:theme.spacing(1),
+    fontWeight:900,
+  
+  },
+  p:{
+marginLeft:20,
+  },
+  spaces:{
+marginTop:theme.spacing(6),
+  },
+  set:{
+    marginTop:theme.spacing(4)
   },
 }));
 
@@ -33,99 +63,120 @@ const Rightbar = () => {
   const classes = useStyles();
   return (
     <Container className={classes.container}>
-      <Typography className={classes.title} gutterBottom>
-        Online Friends
-      </Typography>
-      <AvatarGroup max={6} style={{ marginBottom: 20 }}>
-        <Avatar
-          alt="Remy Sharp"
-          src="https://material-ui.com/static/images/avatar/1.jpg"
-        />
-        <Avatar
-          alt="Travis Howard"
-          src="https://material-ui.com/static/images/avatar/2.jpg"
-        />
-        <Avatar
-          alt="Cindy Baker"
-          src="https://material-ui.com/static/images/avatar/3.jpg"
-        />
-        <Avatar alt="Agnes Walker" src="" />
-        <Avatar
-          alt="Trevor Henderson"
-          src="https://material-ui.com/static/images/avatar/6.jpg"
-        />
-        <Avatar
-          alt="Trevor Henderson"
-          src="https://material-ui.com/static/images/avatar/7.jpg"
-        />
-        <Avatar
-          alt="Trevor Henderson"
-          src="https://material-ui.com/static/images/avatar/8.jpg"
-        />
-      </AvatarGroup>
-      <Typography className={classes.title} gutterBottom>
-        Gallery
-      </Typography>
-      <ImageList rowHeight={100} style={{ marginBottom: 20 }} cols={2}>
-        <ImageListItem>
-          <img
-            src="https://material-ui.com/static/images/image-list/breakfast.jpg"
-            alt=""
-          />
-        </ImageListItem>
-        <ImageListItem>
-          <img
-            src="https://material-ui.com/static/images/image-list/burgers.jpg"
-            alt=""
-          />
-        </ImageListItem>
-        <ImageListItem>
-          <img
-            src="https://material-ui.com/static/images/image-list/camera.jpg"
-            alt=""
-          />
-        </ImageListItem>
-        <ImageListItem>
-          <img
-            src="https://material-ui.com/static/images/image-list/morning.jpg"
-            alt=""
-          />
-        </ImageListItem>
-        <ImageListItem>
-          <img
-            src="https://material-ui.com/static/images/image-list/hats.jpg"
-            alt=""
-          />
-        </ImageListItem>
-        <ImageListItem>
-          <img
-            src="https://material-ui.com/static/images/image-list/vegetables.jpg"
-            alt=""
-          />
-        </ImageListItem>
-      </ImageList>
-      <Typography className={classes.title} gutterBottom>
-        Categories
-      </Typography>
-      <Link href="#" className={classes.link} variant="body2">
-        Sport
-      </Link>
-      <Link href="#" className={classes.link} variant="body2">
-        Food
-      </Link>
-      <Link href="#" className={classes.link} variant="body2">
-        Music
-      </Link>
-      <Divider flexItem style={{marginBottom:5}}/>
-      <Link href="#" className={classes.link} variant="body2">
-        Movies
-      </Link>
-      <Link href="#" className={classes.link} variant="body2">
-        Science
-      </Link>
-      <Link href="#" className={classes.link} variant="body2">
-        Life
-      </Link>
+      <Card >
+      <div className={classes.item}>
+        <Typography gutterBottom variant="h6" color="error" component="h2">Set Up Your Account</Typography>
+
+      </div>
+      </Card>
+      <div className={classes.set}>
+      <Card>
+      <div className={classes.item}>
+        <Typography className={classes.text}><Checkbox/>Follow 5 more Spaces
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.item}>
+        <Typography className={classes.text}><Checkbox/>Upvote 5 more good pieces of content
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.item}>
+        <Typography className={classes.text}><Checkbox/>Ask a question
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.item}>
+        <Typography className={classes.text}><Checkbox/>Add 3 credentials about where you live
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.item}>
+        <Typography className={classes.text}><Checkbox/>Answer a question
+        </Typography>
+      </div>
+      </Card>
+      </div>
+<div className={classes.spaces}>
+<Card>
+      <div className={classes.follow}>
+        <Typography gutterBottom variant="h6"  component="h2" className={classes.text}>Spaces to follow
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><Home/> </IconButton>
+        Yoga & Meditation
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><Home/> </IconButton>
+       Mathematics and Physics
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><Home/> </IconButton>
+   Affiliate & CPA Marketing
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><Home/> </IconButton>
+ BTS Lover's
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><Home/> </IconButton>
+Dhandha Fonders
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><Home/> </IconButton>
+Blogging Help
+        </Typography>
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><img src="hhh" alt="A" /> </IconButton>
+SEO Tips & Trends
+
+        </Typography>
+
+      </div>
+      </Card>
+      <Card>
+      <div className={classes.follow}>
+        <Typography className={classes.text}>  
+        <IconButton><Home/> </IconButton>
+The Entrepreneur 
+        </Typography>
+
+      </div>
+      </Card>
+</div>
+     
     </Container>
   );
 };

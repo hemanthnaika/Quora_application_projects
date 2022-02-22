@@ -12,7 +12,7 @@ Product :
 */
 
 const initialState = {
-    products: [
+    posts: [
         {
             id: 1,
             productName: 'Watch Band',

@@ -1,4 +1,3 @@
-// Correct Bar
 import {
   Box,
   Heading,
@@ -8,14 +7,15 @@ import {
 } from '@chakra-ui/react';
 import UserCard from'../UserPost/PostCard'
 import { useSelector } from 'react-redux';
+import QuestionCard from './QuestionFor';
 
 
-export default function Post() {
-  const { posts } = useSelector(state => state.posts)
+export default function Allquestion() {
+  const { questions } = useSelector(state => state.questions)
   return (
       <Box w="100%" color="gray.600" >
         <Grid item sm={7} xs={150}>
-              {posts.map(product => <UserCard data={product} />)}
+              {questions.map(question => <QuestionCard data={question} />)}
           </Grid>
       </Box >
   );

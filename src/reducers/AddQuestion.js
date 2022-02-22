@@ -1,8 +1,8 @@
 
 const initialState = {
-  categories: []
+  question: []
 }
-const categoriesReducer = (state = initialState, action) => {
+const AddQuestion = (state = initialState, action) => {
   const { type, payload } = action
 
   switch (type) {
@@ -13,4 +13,4 @@ const categoriesReducer = (state = initialState, action) => {
 }
 
 
-export default categoriesReducer
+export default AddQuestion

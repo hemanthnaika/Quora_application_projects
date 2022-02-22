@@ -3,6 +3,7 @@ import QuestionCard from "./QuestionFor";
 import Rightbar from "./RightBar";
 import { Grid, makeStyles } from "@material-ui/core";
 import QuestionLogo from './QuestionLog'
+import AllQuestion from "./AllQuestion";
 const useStyles = makeStyles((theme) => ({
   right: {
     [theme.breakpoints.down("sm")]: {
@@ -19,7 +20,7 @@ const QuestionForYou = () => {
     </Grid>
     <Grid item sm={7} xs={150}>
     <QuestionLogo/>
-     <QuestionCard/>
+     <AllQuestion/>
     </Grid>
     <Grid item sm={3} className={classes.right}>
       <Rightbar />

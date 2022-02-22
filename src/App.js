@@ -10,6 +10,7 @@ import Home from './Quora/Home/Home';
 import QuestionForYou from './Quora/QuestionForYou/App';
 
 
+
 function App() {
 
   const dispatch = useDispatch()
@@ -31,6 +32,8 @@ function App() {
   return (
     <div className="App">
 <Page/>
+{/* <Question/>
+<Home/> */}
   <Toaster/>
    <Routes> 
  <Route exact  path='/home' element={<Home/>}/>

@@ -18,6 +18,7 @@ import ArrowUpwardSharpIcon from '@material-ui/icons/ArrowUpwardSharp';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Question from '../Write/Question';
 import ShareRoundedIcon from '@material-ui/icons/ShareRounded';
+import Answers from './Answers';
 const useStyles = makeStyles((theme) =>({
   root: {
     maxWidth: 'auto',
@@ -29,7 +30,10 @@ const useStyles = makeStyles((theme) =>({
 
 }));
 
-export default function QuestionCard() {
+const QuestionCard=({data})=> {
+  const { id,question,follow } = data
+  console.log({id})
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
@@ -40,12 +44,13 @@ export default function QuestionCard() {
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">
-            Can React be used to build a forum website with several thread pages?
+          {`${question}`}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -64,7 +69,7 @@ export default function QuestionCard() {
         </AccordionSummary>
         <AccordionDetails >
           <Typography>
-    <Question/>
+    <Answers/>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -73,7 +78,7 @@ export default function QuestionCard() {
           <IconButton color="#d50000"  className={classes.menuButton}>
           <RssFeedIcon/> 
           </IconButton>
-          Follow
+          Follow {follow}
         </Button>
         <Button size="small" color="primary">
           <IconButton color="#d50000"  className={classes.menuButton}>
@@ -96,3 +101,4 @@ export default function QuestionCard() {
   );
 }
 
+export default QuestionCard;
