@@ -13,11 +13,12 @@ import axios from 'axios';
 import { useState } from 'react';
 export default function Allquestion() {
   
-   const [Questions, setQuestions] = useState([])
+   const [questions, setquestions] = useState([])
    const getCategories = async () => {
      const res = await axios.get('https://quora-app-api-hemanth.herokuapp.com/api/v1/Question/all')
-     const { questions, message } = res.data
-      setQuestions(questions)
+     const { question, message } = res.data
+     console.log(question)
+      setquestions(question.reverse())
    }
    useEffect(() => {
      getCategories()
@@ -25,7 +26,7 @@ export default function Allquestion() {
   return (
       <Box w="100%" color="gray.600" >
         <Grid item sxs={6} xs={550}>
-              {Questions.map((questions => <QuestionCard data={questions} />))}
+              {questions.map((question => <QuestionCard question={question} />))}
         
           </Grid>
       </Box >

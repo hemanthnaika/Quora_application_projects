@@ -1,13 +1,13 @@
 
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
-export const addQuestion = (question,imageUrl) => async (dispatch) => {  
+export const addQuestion = ( questionContent,imageUrl) => async (dispatch) => {  
     try {
         const base_Url = 'https://quora-app-api-hemanth.herokuapp.com'
         const res = await axios.post(`${base_Url}/api/v1/question/add`, {
-            imageUrl,question
+            imageUrl,questionContent
         })
-        console.log(question,imageUrl)
+        console.log(questionContent,imageUrl)
         console.log(res)
         const { questions, message } = res.data
 

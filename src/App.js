@@ -37,8 +37,6 @@ function App() {
    <Routes> 
  <Route exact  path='/home' element={<Home/>}/>
  <Route exact path='/answer'  element={<QuestionForYou/>}/>
- <Route exact path='/shop/:productId' element={<PostDetails/>} />
- <Route exact path='/shop'  element={<Post/>} />
  </Routes>  
     </div>
   );

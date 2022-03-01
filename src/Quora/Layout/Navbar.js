@@ -195,6 +195,8 @@ export default function Navbar() {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+    localStorage.clear();
+    window.location.href="/login"
     handleMobileMenuClose();
   };
 
@@ -213,8 +215,8 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+      
     </Menu>
   );
 

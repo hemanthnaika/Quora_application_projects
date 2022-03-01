@@ -30,6 +30,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import { Avatar } from '@chakra-ui/react';
 const options = [
  
 
@@ -70,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const PostCard=({data})=> {
-      const {question,Answers,date,_id,imageUrl,likes } = data
+const PostCard=({question})=> {
+    
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -96,24 +97,22 @@ const PostCard=({data})=> {
     <Card className={classes.root}>
       
        <div >
-       {new Date(date).toLocaleString()}
+      
        </div>
-  <CardContent>
+       <CardContent>
+       {new Date(question.date).toLocaleString()}
           <Typography gutterBottom variant="h6" component="h2">
-          {ReactHtmlParser(question)}
+          {ReactHtmlParser(question.questionContent)}
           </Typography>
-         
         </CardContent> 
       <CardMedia
-        className={classes.media}
-        image={imageUrl}
-        
+        className={classes.media}  
+        image={question.imageUrl} 
       />
-  
       <CardActions disableSpacing>
       <FormControlLabel
         control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" />}
-        label={likes}
+   
       />
         <IconButton  aria-label="share">
           <ShareIcon />
@@ -157,16 +156,24 @@ const PostCard=({data})=> {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Answers</Typography>
+          <Typography className={classes.heading}>All Answers</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          {ReactHtmlParser(Answers)}
+          {
+                    question?.allAnswers?.map(answer =>
+                        <>
+                        <Avatar/><p>Answer by UserName</p>
+                        <p>Answered  {new Date(answer.date).toLocaleString()} </p>
+                           <div >
+                                    {ReactHtmlParser(answer?.AContent)}
+                                </div>
+                        </>)
+                }
           </Typography>
         </AccordionDetails>
       </Accordion>
     </Card>
-
 
   );
 }

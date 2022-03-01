@@ -20,9 +20,10 @@ import  { useState } from 'react';
 import { addAnswers } from '../../actions/answers';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ReactQuill from 'react-quill';
-
+import LinkIcon from '@material-ui/icons/Link';
 import {  Divider, TextField } from '@material-ui/core';
 import ReactHtmlParser from 'html-react-parser';
+import axios from 'axios';
 const useStyles = makeStyles((theme) =>({
   root: {
     marginTop:'20px',
@@ -35,39 +36,36 @@ const useStyles = makeStyles((theme) =>({
 
 }));
 
-const QuestionCard=({data})=> {
-  const { _id,question} = data
-
+const QuestionCard=({question})=> {
+ 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
 
-  };
-  
+  }; 
   const handleClose = () => {
     setOpen(false);
   };
   const [Answers,setAnswers] = useState('')
   const [content, setcontent] = useState('')
+  const[inputUrl,setinputUrl]=useState('')
   const dispatch=useDispatch()
  const handleQuill=(value)=>{
   setAnswers(value)
  }
  const handleSubmit=()=>{
-
-dispatch(addAnswers(_id,content,question,Answers))
-
+if(question?._id && Answers !==""){
+dispatch(addAnswers(Answers,question?._id,inputUrl))
+handleClose()
 }
-
- 
+ }
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">
-            {question._id} 
-          {ReactHtmlParser(question)}
+          {ReactHtmlParser(question.questionContent)}
           </Typography>
         </CardContent> 
       </CardActionArea>
@@ -89,7 +87,6 @@ dispatch(addAnswers(_id,content,question,Answers))
           <ArrowUpwardSharpIcon /> 
           </IconButton>
         </Button>
-        
         <Button size="small" color="primary">
           <IconButton color="#d50000"  className={classes.menuButton}>
           <ShareRoundedIcon/>
@@ -106,17 +103,22 @@ dispatch(addAnswers(_id,content,question,Answers))
         >
           <Typography className={classes.heading}>Write Your Answers</Typography>
         </AccordionSummary>
-        <form noValidate autoComplete="off">
-  <TextField onChange={(e) => { setcontent(e.target.value) }} id="outlined-basic" label="Write the Content" variant="outlined" />
-</form>
-    
                 <ReactQuill 
           theme="snow"
           value={Answers}
           onChange={handleQuill}
           />
       
-      
+      <div>
+<LinkIcon />
+                <input 
+                  className="w-75 border-b pt-4 pb-2 mb-4 "
+                value={inputUrl}
+                onChange={(e)=>setinputUrl(e.target.value)}
+                placeholder="Optional: link to add the image link"
+                type="text" />
+            
+              </div>
       <Divider light />
       <Button color="primary" variant="contained" onClick={handleSubmit}>Post</Button>
      

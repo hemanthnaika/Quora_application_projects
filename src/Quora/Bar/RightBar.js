@@ -122,7 +122,7 @@ const Rightbar = () => {
       <Divider light />
       <Card>
       <div className={classes.follow}>
-      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+      <img width={'50px'} height={'50px'} src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYSUyMCUyNiUyMG1lZGl0YXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" />
         <Typography className={classes.text}>  
        
         Yoga & Meditation
@@ -135,7 +135,7 @@ const Rightbar = () => {
       <Card>
       <div className={classes.follow}>
         
-        <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+        <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/online-education-concept-picture-id636332456?b=1&k=20&m=636332456&s=170667a&w=0&h=SyCtNMVCxM2h0L7NuxW4grWplRj-_ZoteN7XiEnVyhs=" alt="" />
         <Typography className={classes.text}>
        Mathematics and Physics
         </Typography>
@@ -147,7 +147,7 @@ const Rightbar = () => {
       <Card>
       <div className={classes.follow}>
             
-      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/trading-business-the-affiliate-offers-a-profit-model-to-adapt-the-picture-id948339996?b=1&k=20&m=948339996&s=170667a&w=0&h=DLo5TsMphxmlKJF5zK-pr7UPVRJPIK30MXlETKbqRkU=" alt="" />
         <Typography className={classes.text}>  
    Affiliate & CPA Marketing
         </Typography>
@@ -159,7 +159,7 @@ const Rightbar = () => {
       <Card>
       <div className={classes.follow}>
                 
-      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/shooting-young-asian-men-and-women-drinking-coffee-picture-id1181866579?b=1&k=20&m=1181866579&s=170667a&w=0&h=_dXvRXeOPVNWTGOdJz8xWTp0czkxYUh5bCpeeCaLjp8=" alt="" />
         <Typography className={classes.text}>  
      
  BTS Lover's
@@ -171,7 +171,7 @@ const Rightbar = () => {
       <Card>
       <div className={classes.follow}>
                 
-      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/filing-in-file-cabinet-picture-id618963716?b=1&k=20&m=618963716&s=170667a&w=0&h=DEsyMypk5YyCtXKOXE3XIbwjkbVJXY8ykco3ip-Y6mA=" alt="" />
         <Typography className={classes.text}>  
        
        Dhandha Fonders
@@ -183,7 +183,7 @@ const Rightbar = () => {
       <Card>
       <div className={classes.follow}>
                 
-      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/social-network-picture-id1142791580?b=1&k=20&m=1142791580&s=170667a&w=0&h=l8xNp1D0D09RkJuG4OcIfYUaQC4ikPKxvXl62kh7w2E=" alt="" />
         <Typography className={classes.text}>  
        
 Blogging Help
@@ -194,7 +194,7 @@ Blogging Help
       <Card>
       <div className={classes.follow}>
                 
-      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/search-engine-optimization-concept-picture-id1168178663?b=1&k=20&m=1168178663&s=170667a&w=0&h=eTdN_sHQusWPbEEWvOE20j6fAg5GI1J-JGStblxJwRE=" alt="" />
         <Typography className={classes.text}>  
       
 SEO Tips & Trends
@@ -208,7 +208,7 @@ SEO Tips & Trends
       <Card>
       <div className={classes.follow}>
                 
-      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/cheerful-woman-and-her-business-plan-picture-id1282110628?b=1&k=20&m=1282110628&s=170667a&w=0&h=NDDPlHUlIblxtIa6J0NIv81PGbG-G6GMPTirGuKEV7I=" alt="" />
         <Typography className={classes.text}>  
        
 The Entrepreneur 
