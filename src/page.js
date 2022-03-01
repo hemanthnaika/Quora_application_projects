@@ -10,7 +10,6 @@ function Page()  {
 
   const { token } = useSelector(state => state.auth)
   return <div>{ token ? <Navbar/>:<FullWidthTabs/>}
- 
     </div>;
 }
  

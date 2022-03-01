@@ -8,15 +8,15 @@ import Post from './Quora/Post/Post';
 import PostDetails from './Quora/UserPost/Details';
 import Home from './Quora/Home/Home';
 import QuestionForYou from './Quora/QuestionForYou/App';
+import FullWidthTabs from './LoginSignup';
+
 
 
 
 function App() {
 
   const dispatch = useDispatch()
-
-
-  useEffect(() => {
+ useEffect(() => {
     const token = localStorage.getItem('token')
 
     if (token) {
@@ -31,9 +31,8 @@ function App() {
   }, [])
   return (
     <div className="App">
+    
 <Page/>
-{/* <Question/>
-<Home/> */}
   <Toaster/>
    <Routes> 
  <Route exact  path='/home' element={<Home/>}/>

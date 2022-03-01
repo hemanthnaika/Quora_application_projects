@@ -1,22 +1,17 @@
 
-import jwt from 'jsonwebtoken'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
-
-
-
-export const addQuestion = (content) => async (dispatch) => {
-
+export const addQuestion = (question,imageUrl) => async (dispatch) => {  
     try {
-        const base_Url = 'https://quora-app-api-hemanth.herokuapp.com/'
-
+        const base_Url = 'https://quora-app-api-hemanth.herokuapp.com'
         const res = await axios.post(`${base_Url}/api/v1/question/add`, {
-            content
+            imageUrl,question
         })
+        console.log(question,imageUrl)
         console.log(res)
-        const { question, message } = res.data
+        const { questions, message } = res.data
 
-        if (question) {
+        if (questions) {
             toast.success(message)
             dispatch({
                 type: "ADD_QUESTION",

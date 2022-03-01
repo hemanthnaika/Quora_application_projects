@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,13 +8,13 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-
+import TextField from '@mui/material/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
+import Avatar from '@mui/material/Avatar';
 import { Home } from '@material-ui/icons';
 import ListAltSharpIcon from '@material-ui/icons/ListAltSharp';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
@@ -24,14 +24,17 @@ import Dialog from '@material-ui/core/Dialog';
 import LanguageIcon from '@material-ui/icons/Language';
 
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
+import LinkIcon from '@material-ui/icons/Link'; 
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
-import Question from '../Write/Question';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {Link} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
+import { addQuestion } from '../../actions/question';
+import { useDispatch } from 'react-redux';
+import Box from '@mui/material/Box';
+import { DialogActions } from '@material-ui/core';
 const defaultProps = {
- 
   m: 1,
   border: 1,
 
@@ -105,6 +108,11 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
  
   },
+  paper: {
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
   inputRoot: {
     color: 'inherit',
   },
@@ -118,12 +126,22 @@ const useStyles = makeStyles((theme) => ({
       width: '20ch',
     },
   },
+  questi:{
+    height:'50vh',
+    width:'50vh',
+    [theme.breakpoints.up("sm")]: {
+      height:'100vh',
+      width:'100vh',
+    },
+  },
+
   sectionDesktop: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
   },
+ 
   notification: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
@@ -139,6 +157,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+  const [Question, setQuestion] = useState('')
+  const dispatch=useDispatch()
+  const[inputUrl,setinputUrl]=useState('')
+  const [value, setValue] = React.useState('Controlled');
+  // const handleQuill=(value)=>{
+  //   setQuestion(value)
+  // }
+  const handleSubmit=()=>{
+    console.log(Question,inputUrl)
+    dispatch(addQuestion(Question,inputUrl))
+    handleClose()
+  
+  }
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -314,12 +345,65 @@ export default function Navbar() {
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle id="alert-dialog-slide-title">{"Write The Question"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            <Question/>
-          </DialogContentText>
+        <DialogTitle id="alert-dialog-slide-title">{"Add Question"}</DialogTitle>
+        <DialogContent className={classes.questi} >
+        <Box
+     sx={{
+    width: 550,
+    height: 150,
+    backgroundColor: '#90caf9',
+    color:'#0d47a1',
+    
+  }}>
+  <Typography className=" px-3 py-1  pt-4 pb-2 mb-10 pl-56" variant="h6" >
+              Tips on getting good answers quickly
+          </Typography>
+          <div className="flex items-center   px-4 py-1 ">
+          <li>
+              Make sure your question has not been asked already
+              </li>
+              <li>
+              Keep your question short and to the point
+              </li>
+              <li>Double-check grammar and spelling</li>
+
+          </div>
+            
+     
+  </Box>
+             
+        <div className="mb-60">
+                <input
+                  required
+                  value={Question}
+                  onChange={(e) => setQuestion(e.target.value)}
+                  type="text"
+                  className="w-75 border-b border-gray-300 pt-4 pb-2 mb-4 outline-none "
+                  placeholder='Start your question with "What", "How", "Why", etc. '
+                />
+              </div>
+              <div>
+              <LinkIcon />
+                <input 
+                  className="w-75 border-b border-gray-300 pt-4 pb-2 mb-4 outline-none border-none"
+                value={inputUrl}
+                onChange={(e)=>setinputUrl(e.target.value)}
+                placeholder="Optional: include a link that gives context"
+                type="text" />
+            
+              </div>
+             
         </DialogContent>
+      <DialogActions>
+          <Button autoFocus onClick={handleClose} variant="contained" color="secondary" >
+          Cancel
+          </Button>
+          <Button  borderRadius={16} {...defaultProps} onClick={handleSubmit} variant="contained" color="primary" autoFocus>
+          Post
+          </Button>
+        </DialogActions>
+     
+      
       </Dialog>
       <IconButton aria-label="show 4 new mails" color="inherit" className={classes.notification}>
               <Badge badgeContent={4} color="secondary">
@@ -339,6 +423,7 @@ export default function Navbar() {
             >
               <MoreIcon />
             </IconButton>
+            
           </div>
         </Toolbar>
       </AppBar>

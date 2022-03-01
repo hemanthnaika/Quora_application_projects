@@ -46,6 +46,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
+    
     width:'auto',
   },
 }));
@@ -65,7 +66,7 @@ export default function FullWidthTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" color="default">
+      <AppBar position="fixed" color="default" >
         <Tabs
           value={value}
           onChange={handleChange}

@@ -1,6 +1,8 @@
 
+import { Divider } from "@chakra-ui/react";
 import { Avatar, Card, Checkbox, Container, IconButton, makeStyles, Typography } from "@material-ui/core";
 import { Home } from "@material-ui/icons";
+import { display } from "@mui/system";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,9 +46,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   follow:{
-    marginTop:theme.spacing(1),
+    marginTop:theme.spacing(3),
     fontWeight:900,
-  
+  display:'flex',
   },
   p:{
 marginLeft:20,
@@ -68,115 +70,155 @@ const Rightbar = () => {
         <Typography gutterBottom variant="h6" color="error" component="h2">Set Up Your Account</Typography>
 
       </div>
+     
       </Card>
       <div className={classes.set}>
       <Card>
+      <Divider light />
       <div className={classes.item}>
+      
         <Typography className={classes.text}><Checkbox/>Follow 5 more Spaces
         </Typography>
       </div>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.item}>
         <Typography className={classes.text}><Checkbox/>Upvote 5 more good pieces of content
         </Typography>
       </div>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.item}>
         <Typography className={classes.text}><Checkbox/>Ask a question
         </Typography>
       </div>
       </Card>
+      <Divider light/>
       <Card>
       <div className={classes.item}>
         <Typography className={classes.text}><Checkbox/>Add 3 credentials about where you live
         </Typography>
       </div>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.item}>
         <Typography className={classes.text}><Checkbox/>Answer a question
         </Typography>
       </div>
       </Card>
+      <Divider light />
       </div>
 <div className={classes.spaces}>
 <Card>
+<Divider light />
       <div className={classes.follow}>
-        <Typography gutterBottom variant="h6"  component="h2" className={classes.text}>Spaces to follow
+        <Typography gutterBottom variant="h6"  component="h6" className={classes.text}>Spaces to follow
         </Typography>
       </div>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
         <Typography className={classes.text}>  
-        <IconButton><Home/> </IconButton>
+       
         Yoga & Meditation
+        
         </Typography>
       </div>
+      <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
-        <Typography className={classes.text}>  
-        <IconButton><Home/> </IconButton>
+        
+        <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
+        <Typography className={classes.text}>
        Mathematics and Physics
         </Typography>
+      
       </div>
+      <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
+            
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
         <Typography className={classes.text}>  
-        <IconButton><Home/> </IconButton>
    Affiliate & CPA Marketing
         </Typography>
+        
       </div>
+      <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
+                
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
         <Typography className={classes.text}>  
-        <IconButton><Home/> </IconButton>
+     
  BTS Lover's
         </Typography>
       </div>
+      <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
+                
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
         <Typography className={classes.text}>  
-        <IconButton><Home/> </IconButton>
-Dhandha Fonders
+       
+       Dhandha Fonders
         </Typography>
       </div>
+      <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
+                
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
         <Typography className={classes.text}>  
-        <IconButton><Home/> </IconButton>
+       
 Blogging Help
         </Typography>
       </div>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
+                
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
         <Typography className={classes.text}>  
-        <IconButton><img src="hhh" alt="A" /> </IconButton>
+      
 SEO Tips & Trends
 
         </Typography>
 
       </div>
+      <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </Card>
+      <Divider light />
       <Card>
       <div className={classes.follow}>
+                
+      <img width={'50px'} height={'50px'} src="https://media.istockphoto.com/photos/mental-health-matters-motivational-quote-on-the-letter-board-text-picture-id1307052182?b=1&k=20&m=1307052182&s=170667a&w=0&h=2QclCUuNAicP20FB0E6-EfxwW3LUadY9J6r8HZGCN8Q=" alt="" />
         <Typography className={classes.text}>  
-        <IconButton><Home/> </IconButton>
+       
 The Entrepreneur 
         </Typography>
 
       </div>
+      <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </Card>
 </div>
-     
+<Divider light />
     </Container>
   );
 };

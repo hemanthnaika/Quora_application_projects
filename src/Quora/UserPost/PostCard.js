@@ -7,8 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
+
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
@@ -19,15 +18,26 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import ShareSharpIcon from '@material-ui/icons/ShareSharp';
-import { useSelector } from 'react-redux';
+import ReactHtmlParser from 'html-react-parser';
+
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import { Button } from '@material-ui/core';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
+ 
+
+<BookmarkBorderIcon/>,
+ < ArrowDownwardIcon/>,
+
+
+
  
 ];
 
@@ -39,9 +49,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%'
   },
   media: {
-    height: 250,
+    height: 550,
     [theme.breakpoints.down("sm")]: {
-      height: 150,
+      height: 250,
        },
   },
   expand: {
@@ -61,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const PostCard=({data})=> {
-      const { imageUrl, actualPrice, listingPrice, productName, color } = data
+      const {question,Answers,date,_id,imageUrl,likes } = data
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -84,34 +94,27 @@ const PostCard=({data})=> {
   return (
     
     <Card className={classes.root}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
+      
+       <div >
+       {new Date(date).toLocaleString()}
+       </div>
+  <CardContent>
+          <Typography gutterBottom variant="h6" component="h2">
+          {ReactHtmlParser(question)}
+          </Typography>
+         
+        </CardContent> 
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        image={imageUrl}
+        
       />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-
-        </Typography>
-      </CardContent>
+  
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
+      <FormControlLabel
+        control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" />}
+        label={likes}
+      />
         <IconButton  aria-label="share">
           <ShareIcon />
         </IconButton>
@@ -147,18 +150,25 @@ const PostCard=({data})=> {
           </MenuItem>
         ))}
       </Menu>
-
-
-
-
       </CardActions>
- 
-
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>Answers</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          {ReactHtmlParser(Answers)}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </Card>
 
 
   );
 }
 export default PostCard;
-
 
